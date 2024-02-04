@@ -12,7 +12,7 @@ const GalleryCard = ({data}) => {
         className="img-fluid"
         alt=""
       />
-      <Slide direction="up" className="bottom-text"><button type="button" className="btn btn-outline-light btn-lg">Explore</button></Slide>
+      <Slide direction="up" className="bottom-text"><button type="button" className="btn btn-outline-light btn-lg"><span>Explore</span></button></Slide>
     </div>
   );
 };

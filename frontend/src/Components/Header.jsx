@@ -1,6 +1,10 @@
-import React from "react";
+import { useContext } from "react";
+import { HotelContext } from "../context/HotelContext";
+
 
 const Header = () => {
+  const {hotels}=useContext(HotelContext);
+
   return (
     <>
       <header
@@ -10,15 +14,14 @@ const Header = () => {
         <div className="container d-flex align-items-center justify-content-between">
           <nav className="navbar navbar-dark  bg-body-tertiary fixed-top">
             <div className="container-fluid">
+            <div className="logo">
+              <img className="header-logo" src="assets/img/logo.png"/> 
+              <h1>Chardham Stays</h1>
+            </div>
               
-              
-              <a className="logo" href="#">
-              <img className="header-logo"src="assets/img/logo2.png">
-              </img>
-              </a>
               <nav id="navbar" className="navbar">
                 <ul>
-                  <li>
+                  <li className="nav-item">
                     <a href="#hero">Home</a>
                   </li>
                   <li className="nav-item dropdown">
@@ -32,27 +35,18 @@ const Header = () => {
                       Hotel
                     </a>
                     <ul className="dropdown-menu">
-                      <li>
+                    {hotels && hotels.slice(0, 7).map((hotel, index) => (<li key={index}>
                         <a className="dropdown-item" href="#">
-                          Action
+                          {hotel.name} 
                         </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Another action
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Something else here
-                        </a>
-                      </li>
+                      </li>))}
+                      
                       <li>
                         <hr className="dropdown-divider" />
                       </li>
                       <li>
                         <a className="dropdown-item" href="#">
-                          Separated link
+                          Search 
                         </a>
                       </li>
                     </ul>
@@ -68,51 +62,32 @@ const Header = () => {
                       Gallery
                     </a>
                     <ul className="dropdown-menu">
-                      <li>
+                    {hotels && hotels.slice(0, 7).map((hotel, index) => (<li key={index}>
                         <a className="dropdown-item" href="#">
-                          Action
+                          {hotel.name} 
                         </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Another action
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Something else here
-                        </a>
-                      </li>
-                      <li>
-                        <hr className="dropdown-divider" />
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Separated link
-                        </a>
-                      </li>
+                      </li>))}
+                     
+                   
+                   
                     </ul>
                   </li>
-
-                  <li>
+                  <li className="nav-item">
                     <a href="#blog">Blog</a>
                   </li>
-                  <li>
+                  <li className="nav-item">
                     <a href="#contact">Contact</a>
                   </li>
-                  {/* <li>
-                  <a className="btn-book-a-table" href="#contact">
-                Get in Touch
-              </a>
-                  </li> */}
+                  <li>
+                  <a className="btn-book-a-table" href="#book">
+                    BOOK NOW
+                  </a>
+                  </li>
                 </ul>
               </nav>
-              <a className="btn-book-a-table" href="#contact">
-                Get in Touch
-              </a>
+              
               <button
                 className="navbar-toggler custom-toggler"
-                type="button"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar"
                 aria-controls="offcanvasDarkNavbar"
@@ -128,7 +103,7 @@ const Header = () => {
               >
                 <div className="offcanvas-header">
                   <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                    Dark offcanvas
+                    Chardham Stays
                   </h5>
                   <button
                     type="button"
@@ -150,7 +125,7 @@ const Header = () => {
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#">
-                        Link
+                        Adventure Sports
                       </a>
                     </li>
                     <li className="nav-item dropdown">
@@ -161,27 +136,27 @@ const Header = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        Dropdown
+                        Hotels
                       </a>
                       <ul className="dropdown-menu dropdown-menu-dark">
                         <li>
                           <a className="dropdown-item" href="#">
-                            Action
+                            Hotel1
                           </a>
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                            Another action
+                            Hotel2
                           </a>
                         </li>
-                        <li>
+                        {/* <li>
                           <hr className="dropdown-divider" />
                         </li>
                         <li>
                           <a className="dropdown-item" href="#">
-                            Something else here
+                            Contact
                           </a>
-                        </li>
+                        </li> */}
                       </ul>
                     </li>
                   </ul>

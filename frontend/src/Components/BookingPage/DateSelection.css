@@ -1,0 +1,26 @@
+.drawer {
+
+  -webkit-transform: translate3d(0, -400px, 0);
+  -moz-transform: translate3d(0, -400px, 0);
+  -o-transform: translate3d(0, -400px, 0);
+  transform: translate3d(0, -400px, 0);
+}
+.drawer.active{
+
+    -webkit-transform: translate3d(0, 10px, 0);
+    -moz-transform: translate3d(0, 10px, 0);
+    -o-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+}
+
+  .hotel-page-heading {
+height: 60px;
+background-color: #2C6461;
+color:white
+}
+.hotel-page-footer {
+margin-top: 40px;
+    height: 60px;
+    background-color: #2C6461;
+    color:white
+    }

@@ -24,7 +24,8 @@ export default function Gallery() {
   };
   return (
     <>
-      <section>
+
+
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -52,7 +53,9 @@ export default function Gallery() {
 
           
         </Swiper>
-      </section>
+        
+
+
     </>
   );
 }

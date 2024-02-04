@@ -5,7 +5,7 @@ const HotelCard = ({cardData}) => {
 
   return (
     <>
-      <div className="card" >
+      <div className="card hotel-card1" >
        {img && <img src={img} className="card-img-top" alt="..." />}
         <div className="card-body">
           <p className="card-text">
