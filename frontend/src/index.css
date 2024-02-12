@@ -171,6 +171,9 @@ section {
   #navbar {
     display: none;
   }
+  .navbar-toggler {
+    display: block !important;
+  }
   .booking-form .form-field{
     padding-bottom: 10px;
   }

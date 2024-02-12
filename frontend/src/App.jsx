@@ -4,6 +4,12 @@ import HotelBookingPage from './Pages/HotelBookingPage';
 import { Home } from './Pages/Home';
 import { useEffect, useState } from 'react';
 import { deleteDuplicateHotels, getHotels, getPosts } from './lib/sanity';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import TermsAndConditions from './Pages/TermsCondition';
+import RefundPolicy from './Pages/Refund';
+import PrivacyPolicy from './Pages/Privacy';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 
@@ -28,7 +34,18 @@ function App() {
 
   return (
     <>
-    <Home/>
+    <BrowserRouter>
+    <Header/>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        </Routes>
+      </div>
+    <Footer/>
+    </BrowserRouter>
     </>
   )
 }

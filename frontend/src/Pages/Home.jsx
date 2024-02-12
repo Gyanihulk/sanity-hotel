@@ -12,7 +12,7 @@ import Footer from '../Components/Footer'
 
 export const Home = () => {
   return (
-    <><Header/>
+    <>
     <Gallery/>
     <HotelBookingForm/>
     <Parrallex service={"about"}/>
@@ -21,7 +21,7 @@ export const Home = () => {
     <Gallery1/>
     <Testimonials/>
     {/* <Parrallex service={"mission"}/> */}
-    <Footer/>
+   
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import {Instagram,Facebook,Geo,Clock,Telephone} from 'react-bootstrap-icons'
 import { HotelContext } from '../context/HotelContext';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   const {hotels}=useContext(HotelContext);
   return (
@@ -54,9 +55,20 @@ const Footer = () => {
       </div>
     </div>
     <div className="container">
-      <div className="credits">
-        Designed by <a href="https://ubiquitous-palmier-e3a771.netlify.app/">Gyanihulk</a>
-      </div>
+    <div class="row align-items-start">
+    <div class="col">
+    Designed by <a href="https://ubiquitous-palmier-e3a771.netlify.app/">Gyanihulk</a>
+    </div>
+    <div class="col">
+    <Link to="/terms-and-conditions">Terms and Conditions</Link>
+    </div>
+    <div class="col">
+    <Link to="/refund-policy">Refund Policy</Link>
+    </div>
+    <div class="col">
+    <Link to="/privacy-policy">Privacy Policy</Link>
+    </div>
+  </div>
     </div>
 </footer>
 
