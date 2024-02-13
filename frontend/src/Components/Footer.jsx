@@ -57,7 +57,9 @@ const Footer = () => {
     <div className="container">
     <div class="row align-items-start">
     <div class="col">
-    Designed by <a href="https://ubiquitous-palmier-e3a771.netlify.app/">Gyanihulk</a>
+    Designed by <a href="https://ubiquitous-palmier-e3a771.netlify.app/">Gyanihulk</a><br/>
+    
+    Powered By <a href="/" >SHREE BALAJI ENTERPRISES</a>
     </div>
     <div class="col">
     <Link to="/terms-and-conditions">Terms and Conditions</Link>
