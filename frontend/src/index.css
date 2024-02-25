@@ -28,6 +28,10 @@
   src: url('/assets/fonts/Mastery Kingdom.otf') format('opentype');
 }
 @font-face {
+  font-family: 'Milestone';
+  src: url('/assets/fonts/Milestone.otf') format('opentype');
+}
+@font-face {
   font-family: 'Deutsch';
   src: url('/assets/fonts/Deutsch.ttf') format('truetype');
 }
@@ -40,7 +44,9 @@
   font-family: 'Vampire Wars', sans-serif;
   letter-spacing: 2px;
 }
-
+.Milestone{
+  font-family: 'Milestone', sans-serif;
+}
 .masteryKindom {
   font-family: 'Mastery Kingdom', sans-serif;
 }

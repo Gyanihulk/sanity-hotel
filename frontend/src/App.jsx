@@ -7,12 +7,14 @@ import RefundPolicy from './Pages/Refund';
 import PrivacyPolicy from './Pages/Privacy';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Checkout from './Pages/Checkout';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
   return (
     <>
     <BrowserRouter>
+    <Toaster />
     <Header/>
       <div>
         <Routes>
@@ -20,7 +22,7 @@ function App() {
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/hotel/:hotel/checkout/" element={<Checkout/>} />
+          <Route path="/hotel/:hotelId/checkout/" element={<Checkout/>} />
         </Routes>
       </div>
     <Footer/>

@@ -1,36 +1,93 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-export const CustomerDetailsForm = () => {
+export const CustomerDetailsForm = ({firstName,
+  lastName,
+  email,
+  phone,
+  city,
+  country,
+  handleFirstNameChange,
+  handleLastNameChange,
+  handleEmailChange,
+  handlePhoneChange,
+  handleCityChange,
+  handleCountryChange}) => {
+
+
   return (
-    <div><form>
-    <div className="form-group">
-      <label >Email address</label>
-      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+    <div className='container'>
+      <h4 className='bg-primary'>Customer Details</h4>
+      <form>
+        <div className="row">
+          <div className="col">
+            <input 
+              type="text" 
+              className="form-control m-2" 
+              placeholder="First name" 
+              aria-label="First name"
+              value={firstName}
+              onChange={handleFirstNameChange} 
+            />
+          </div>
+          <div className="col">
+            <input 
+              type="text" 
+              className="form-control m-2" 
+              placeholder="Last name" 
+              aria-label="Last name"
+              value={lastName}
+              onChange={handleLastNameChange} 
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            
+          <input
+            type="email"
+            className="form-control m-2"
+            id="email"
+            value={email}
+            aria-label="email"
+            placeholder='Email'
+            onChange={handleEmailChange}
+          />
+          </div>
+          <div className="col">
+          <input
+            type="text"
+            className="form-control m-2"
+            value={city}
+            aria-label="City"
+            placeholder="City"
+            onChange={handleCityChange}
+          />
+          </div>
+          
+        </div>
+        <div className="row">
+          <div className="col">
+          <select
+            className="form-control m-2"
+            aria-label="Country"
+            onChange={handleCountryChange}
+          >
+            <option value="India">India</option>
+          </select>
+          </div>
+          <div className="col">
+          <input
+            type="tel"
+            className="form-control m-2"
+            value={phone}
+            onChange={handlePhoneChange}
+            placeholder="IN +91"
+            aria-label="Phone"
+          />
+          </div>
+          
+        </div>
+      </form>
     </div>
-    <div className="form-group">
-      <label >Example select</label>
-      <select className="form-control" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
-    <div className="form-group">
-      <label >Example multiple select</label>
-      <select multiple className="form-control" id="exampleFormControlSelect2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
-    <div className="form-group">
-      <label >Example textarea</label>
-      <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-  </form></div>
-  )
-}
+  );
+};
