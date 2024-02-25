@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-
+import React, { useContext, useState } from 'react';
+import { HotelContext } from '../context/HotelContext';
+import { useNavigate } from 'react-router-dom';
 function HotelBookingForm() {
   const [selectedHotel, setSelectedHotel] = useState('hotel1');
   const [checkinDate, setCheckinDate] = useState('');
@@ -7,6 +8,7 @@ function HotelBookingForm() {
 
   const handleHotelChange = (event) => {
     setSelectedHotel(event.target.value);
+    console.log(event)
   };
 
   const handleDateChange = (event) => {
@@ -16,14 +18,23 @@ function HotelBookingForm() {
   const handleNightsChange = (event) => {
     setNights(parseInt(event.target.value, 10));
   };
-
+const navigate=useNavigate();
   const handleBooking = () => {
     // Add your booking logic here
     console.log('Selected Hotel:', selectedHotel);
     console.log('Check-In Date:', checkinDate);
     console.log('Number of Nights:', nights);
+  
+    navigate(`/hotel/${selectedHotel}/checkout/?date=${checkinDate}&nights=${nights}`);
   };
-
+  const {hotels}=useContext(HotelContext);
+  
+  const handleFocus = (event) => {
+    if (event.target.type === 'date' && 'showPicker' in event.target) {
+      event.target.showPicker();
+    }
+  };
+  console.log(hotels)
   return (
 <div className="booking-container">
   
@@ -40,14 +51,12 @@ function HotelBookingForm() {
           <div className="col-md-2 form-field">
             <label htmlFor="hotelSelect" className="form-label">Select Property</label>
             <select
-              className="form-control"
+              className="form-select"
               id="hotelSelect"
               value={selectedHotel}
               onChange={handleHotelChange}
             >
-                <option value="hotel1">Hotel 1</option>
-                <option value="hotel2">Hotel 2</option>
-                <option value="hotel3">Hotel 3</option>
+              {hotels && hotels.slice(0, 7).map((hotel, index)=>(<option className="form-control" key={index} value={hotel.name}>{hotel.name}</option>))}
             </select>
           </div>
           <div className="col-md-2 form-field">
@@ -58,6 +67,7 @@ function HotelBookingForm() {
               id="checkinDate"
               value={checkinDate}
               onChange={handleDateChange}
+              onFocus={handleFocus}
             />
           </div>
           <div className="col-md-2 form-field">
