@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { HotelContext } from "../context/HotelContext";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -14,10 +15,13 @@ const Header = () => {
         <div className="container d-flex align-items-center justify-content-between">
           <nav className="navbar navbar-dark  bg-body-tertiary fixed-top">
             <div className="container-fluid">
+              <Link to='/'>
+
             <div className="logo">
-              <img className="header-logo" src="assets/img/logo.png"/> 
+              <img className="header-logo " src="assets/img/logo.png"/> 
               <h1>Chardham Stays</h1>
             </div>
+              </Link>
               
               <nav id="navbar" className="navbar">
                 <ul>
@@ -139,16 +143,11 @@ const Header = () => {
                         Hotels
                       </a>
                       <ul className="dropdown-menu dropdown-menu-dark">
-                        <li>
+                      {hotels && hotels.slice(0, 7).map((hotel, index)=>(<li key={index}>
                           <a className="dropdown-item" href="#">
-                            Hotel1
+                            {hotel.name}
                           </a>
-                        </li>
-                        <li>
-                          <a className="dropdown-item" href="#">
-                            Hotel2
-                          </a>
-                        </li>
+                        </li>))}
                         {/* <li>
                           <hr className="dropdown-divider" />
                         </li>
