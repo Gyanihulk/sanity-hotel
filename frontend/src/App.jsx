@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
     <Toaster />
     <Header/>
-      <div>
+      <div className='horizon'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
